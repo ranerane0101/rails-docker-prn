@@ -15,13 +15,9 @@ RUN mkdir /app/src
 ENV APP_ROOT /app/src
 WORKDIR $APP_ROOT
 
-ADD ./src/Gemfile $APP_ROOT/Gemfile
-ADD ./src/Gemfile.lock $APP_ROOT/Gemfile.lock
+ADD ./src $APP_ROOT
 
-RUN bundle install
-
-
-ADD . $APP_ROOT
+RUN bundle config --local set path 'vendor/bundle' \ && bundle install
 
 COPY start.sh /start.sh
 RUN chmod 744 /start.sh
