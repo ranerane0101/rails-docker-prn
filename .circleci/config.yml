@@ -15,7 +15,7 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.6.3
-      - image: circleci/mysql:13.6
+      - image: circleci/postgres:13.6
         environment:
           POSTGRES_PASSWORD: 'admin-pass'
           POSTGRES_DATABASE: src_test
