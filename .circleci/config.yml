@@ -17,9 +17,9 @@ jobs:
       - image: circleci/ruby:2.6.3
       - image: circleci/postgres:13.6
         environment:
-          POSTGRES_PASSWORD: ''
+          POSTGRES_PASSWORD: 'admin-pass'
           POSTGRES_DATABASE: src_test
-          POSTGRES_USER: 'postgres'
+          POSTGRES_USER: 'admin'
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
