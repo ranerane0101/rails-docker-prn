@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3
+      - image: cimg/ruby:2.6.5
     working_directory: ~/rails-docker-prn/src
     steps:
       - checkout:
@@ -14,7 +14,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/ruby:2.6.3
+      - image: cimg/ruby:2.6.5
       - image: circleci/postgres:14.1
         environment:
           POSTGRES_PASSWORD: 'admin-pass'
