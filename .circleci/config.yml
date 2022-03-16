@@ -1,11 +1,11 @@
 version: 2.1
 orbs:
-  ruby: cimg/ruby@1.1.2
+  ruby: circleci/ruby@1.1.2
 
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.6.5
+      - image: circleci/ruby:2.6.3
     working_directory: ~/rails-docker-prn/src
     steps:
       - checkout:
@@ -14,10 +14,10 @@ jobs:
 
   test:
     docker:
-      - image: cimg/ruby:2.6.5
-      - image: cimg/postgres:14.1
+      - image: circleci/ruby:2.6.5
+      - image: circleci/postgres:14.1
         environment:
-          POSTGRES_PASSWORD: 'admin-pass'
+          POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_DATABASE: src_test
           POSTGRES_USER: 'admin'
     environment:
