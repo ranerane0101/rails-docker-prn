@@ -14,8 +14,8 @@ jobs:
 
   test:
     docker:
-      - image: circleci/ruby:2.6.5
-      - image: circleci/postgres:14.1
+      - image: circleci/ruby:2.6.3
+      - image: circleci/postgres:13.6
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_DATABASE: src_test
