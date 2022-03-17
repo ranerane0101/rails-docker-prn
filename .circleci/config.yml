@@ -17,11 +17,11 @@ jobs:
       - image: circleci/ruby:2.6.3
         environment:
             PGHOST: localhost
-            PGUSER: admin
+            PGUSER: rails-docker-prn
             RAILS_ENV: test
       - image: circleci/postgres:13.6
         environment:
-          POSTGRES_USER: admin
+          POSTGRES_USER: rails-docker-prn
           POSTGRES_PASSWORD: ""
           POSTGRES_DATABASE: src_test
     environment:
